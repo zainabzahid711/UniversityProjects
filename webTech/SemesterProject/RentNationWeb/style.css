@@ -287,9 +287,9 @@
     position: relative;
   }
   
-  .heroContentMain
-  /* .heroContentMain2, */
-  /* .heroContentMain3  */
+  .heroContentMain,
+  .heroContentMain2, 
+   .heroContentMain3 
   {
     position: relative;
     z-index: 2;
@@ -302,9 +302,9 @@
     text-align: center;
   }
   
-  .heroContentMain::before
-  /* .heroContentMain2::before, */
-  /* .heroContentMain3::before  */
+  .heroContentMain::before,
+  .heroContentMain2::before,
+  .heroContentMain3::before 
   {
     content: "";
     position: absolute;
@@ -418,47 +418,6 @@
       width: 100%;
     }
   }
-
-/* ---------------- orderProducts -------------------- */
-  
-.services-display {
-    display: flex;
-    justify-content: space-around;
-    /* background-color: #fff; */
-  }
-  
-  .headc {
-    color: var(--white-color);
-  }
-  
-  .order-content {
-    margin: 0 20%;
-    padding-top: 200px;
-  }
-  
-  .content-check {
-    padding: 30px !important;
-    margin-bottom: 0px !important;
-  }
-  
-  .sorry {
-    color: rgb(241, 114, 114);
-  }
-  
-  .kayaks-sold {
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    border: 1px solid red;
-    font-size: 32px;
-    background-color: #373738;
-    border-radius: 6px;
-    margin: 100px 0;
-    padding: 40px;
-  }
-  
-  .width-adjust {
-    width: 40%;
-  }
-  
   
   
   /*------------------ listing cards order home -----------------  */
@@ -1096,4 +1055,46 @@ input[type=number] {
   border-radius: 8px !important;
   text-align: center;
   margin: 90px auto 170px !important;
+}
+
+
+
+/* ---------------- orderProducts -------------------- */
+  
+.services-display {
+  display: flex;
+  justify-content: space-around;
+  /* background-color: #fff; */
+}
+
+.headc {
+  color: var(--white-color);
+}
+
+.order-content {
+  margin: 0 20%;
+  padding-top: 200px;
+}
+
+.content-check {
+  padding: 30px !important;
+  margin-bottom: 0px !important;
+}
+
+.sorry {
+  color: rgb(241, 114, 114);
+}
+
+.kayaks-sold {
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  border: 1px solid red;
+  font-size: 32px;
+  background-color: #373738;
+  border-radius: 6px;
+  margin: 100px 0;
+  padding: 40px;
+}
+
+.width-adjust {
+  width: 40%;
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font family  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+    rel="stylesheet">
+  <title>RentNation</title>
+  <link rel="shortcut icon" href="./assets/homepage/svgs/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="homeContainer">
+  <!------------------- header navbar  -------------------------->
+  <div class="navMain">
+    <div class="container">
+      <nav class="navx">
+        <div class=""><img class="logo head-logo" src="./assets/homepage/svgs/logo.svg" alt="" /></div>
+        <div class="navItemMain navItemSubMain">
+          <div class="navItem">
+            <a aria-current="page" href="./index.html">
+              HOME
+            </a>
+          </div>
+          <div class="navItem dropdown">
+            <a class="head-link" href="#">Order</a>
+            <div class="dropdown-content">
+              <a href="orderGolfCar.html">Golf Car</a>
+              <a href="beachSupplies.html">Beache Supplies</a>
+              <a href="kayaks.html">Kayaks</a>
+            </div>
+          </div>
+          <div class="navItem">
+            <a href="./aboutus.html">
+              ABOUT
+            </a>
+          </div>
+          <div class="navItem">
+            <a href="contactus.html">
+              CONTACT
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!---------------------- Contact US  --------------------->
+  <div class="order-content text-center mb-5 headc">
+    <h1>Our BeachSuppiles</h1>
+    <p>"Experience the ultimate beach adventure with our premium beach supplies for rent. Whether you're planning a
+      relaxing day by the shore or an exciting beach party, we've got you covered. From comfortable beach chairs and
+      umbrellas to snorkeling gear and beach games, our high-quality supplies ensure a memorable beach experience.
+      Renting our beach supplies allows you to fully enjoy the sun, sand, and sea without the hassle of bringing your
+      own equipment. Get ready to soak up the sun, make sandcastles, explore the underwater world, and create
+      unforgettable beach memories with our top-notch rental beach supplies. Start your beach getaway with us and make
+      the most of your time at the beach!"</p>
+  </div>
+  <div class="contactFormMain content content-check">
+    <div class="contactFormHeading">Order Now</div>
+    <form action="">
+      <div class="inputDiv">
+        <label class="lable" for="name">Full Name</label>
+        <input class="input" id="name" type=text placeholder="Enter your name" />
+      </div>
+
+      <div class="inputDiv mt-4">
+        <label class="lable" for="email">Email</label>
+        <input class="input" id="email" type=email placeholder="Enter your email" />
+      </div>
+
+      <div class="inputDiv mt-4">
+        <label class="lable" for="address">Address</label>
+        <input class="input" id="address" type=text placeholder="Enter your Address" />
+      </div>
+
+      <div class="inputDiv mt-4">
+        <label class="lable" for="product">Beach Product</label>
+        <select class="input" id="product" name="product">
+          <option class="product-options" value="umbrellas">Umbrellas</option>
+          <option value="chairs">Chairs</option>
+          <option value="tents">Tents</option>
+          <option value="bags">Bags</option>
+          <option value="safety_equipment">Safety Equipment</option>
+        </select>
+      </div>
+
+      <div class="inputDiv mt-4">
+        <label class="lable" for="value">Quantity</label>
+        <input class="input" id="value" type=number placeholder="Enter your Quantity" />
+      </div>
+      <div class="inputDiv mt-4">
+        <label class="lable" for="time">Time Duration ( 12$/hr )</label>
+        <input class="input" id="time" type=number placeholder="i.e 4hrs" />
+      </div>
+      <button class="navbutton submit-contact " type="submit" onclick="redirectToConfirm()"> Order Confirm</button>
+
+    </form>
+  </div>
+  <h1 class="text-center mb-5 headc">Here's a view of our Some Products</h2>
+    <div class=" container services-display">
+      <img src="./assets/homepage/beach-img1.png" alt="">
+      <img src="./assets/homepage/beach-img2.png" alt="">
+      <img src="./assets/homepage/beach-img3.png" alt="">
+    </div>
+    </div>
+    <img class="left" src="./assets/homepage/bg-leftHalf.png" alt="">
+    <img class="right" src="./assets/homepage/bg-rightHalf.png" alt="">
+
+</body>
+<script>
+  function redirectToConfirm() {
+    window.location.href = "./confirm.html";
+  }
+</script>
+
+</html>
