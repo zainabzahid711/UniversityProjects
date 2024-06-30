@@ -50,7 +50,7 @@ require 'PHPMailer/PHPMailer/SMTP.php';
      $mail->Host       = 'smtp.gmail.com';                    
      $mail->SMTPAuth   = true;                                   
      $mail->Username   = 'zynabzahid877@gmail.com';                
-     $mail->Password   = 'zyNabDelL&&$%';                               
+     $mail->Password   = '123';                               
      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;          
      $mail->Port       = 465;                                    
      $mail->setFrom('f2022105062@umt.edu.pk', 'burhan');
