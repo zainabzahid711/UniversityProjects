@@ -92,6 +92,8 @@ body {
 }
 
 .dropdown-content {
+  background-color: #383a3a;
+  width: 100%;
   display: none;
   position: absolute;
   z-index: 1;
@@ -193,18 +195,18 @@ body {
     font-weight: 500;
     margin-top: 20px;
     margin-right: 5px;
-    background: var(--bg-grey2-color);
+    background: rgb(100, 89, 89);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     padding: 13px;
     border-radius: 10px;
-    width: 50%;
+    width: 20%;
     text-align: center;
   }
 
   .navItemMain {
     position: absolute;
-    background-color: black;
+    /* background-color: black; */
     top: 80px;
     left: 0px;
     width: 100vw;
@@ -343,11 +345,11 @@ body {
   margin-bottom: 48px;
 }
 
-@media (min-width: 1300px) {
+@media (max-width: 1200px) {
   .heroMark {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 95px;
+    right: 240px;
   }
 }
 
@@ -464,7 +466,7 @@ body {
   color: var(--grey-lite1);
 }
 
-.price {
+.shedCard {
   color: var(--yellow1-color);
   font-size: 20px;
   font-weight: 700;
@@ -485,6 +487,33 @@ body {
   color: var(--text-greylite1-color);
 }
 
+@media (max-width: 1200px) {
+  .cardexpHead {
+    font-size: 14px;
+  }
+  .shedCard {
+    margin-right: 10px;
+    font-size: 12px;
+    width: 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .cardMainImage {
+    width: 100%;
+  }
+  .cardimage {
+    width: 100%;
+  }
+  .cardContentO {
+    padding: 30px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .cardorder {
+    flex-direction: column;
+  }
+}
 @media (max-width: 767px) {
   .card {
     flex-direction: column;
@@ -511,6 +540,23 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .listHeading {
+    font-size: 10px;
+  }
+  .listParaa {
+    font-size: 12px;
+  }
+  .cardContentO {
+    padding: 30px;
+    flex-direction: row;
+    width: 100%;
+  }
+  .cardorder {
+    flex-direction: row;
   }
 }
 
@@ -833,6 +879,15 @@ body {
   top: 700px;
 }
 
+@media (max-width: 767px) {
+  .left {
+    display: none;
+  }
+
+  .right {
+    display: none;
+  }
+}
 /* -------About us --------- */
 
 .content {
