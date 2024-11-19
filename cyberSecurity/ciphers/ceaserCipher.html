@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher</title>
+  </head>
+  <body>
+    <h2>Caesar Cipher Encryption and Decryption</h2>
+
+    <label for="plaintext">Enter Plaintext:</label>
+    <input
+      type="text"
+      id="plaintext"
+      placeholder="Enter your text here"
+    /><br /><br />
+
+    <label for="shift">Enter Shift Key (0-25):</label>
+    <input
+      type="number"
+      id="shift"
+      min="0"
+      max="25"
+      placeholder="Shift Key"
+    /><br /><br />
+
+    <button onclick="encryptText()">Encrypt</button>
+    <button onclick="decryptText()">Decrypt</button><br /><br />
+
+    <h3>Result</h3>
+    <p><strong>Encrypted Text:</strong> <span id="encryptedText"></span></p>
+    <p><strong>Decrypted Text:</strong> <span id="decryptedText"></span></p>
+
+    <script>
+      // Function to encrypt text using Caesar Cipher
+      function caesarCipher(text, shift) {
+        let result = "";
+
+        for (let i = 0; i < text.length; i++) {
+          let char = text[i];
+
+          // Encrypt only alphabetic characters
+          if (/[a-zA-Z]/.test(char)) {
+            const base = char === char.toUpperCase() ? 65 : 97; // 'A' = 65, 'a' = 97
+            let x = char.charCodeAt(0) - base;
+            let encryptedChar = String.fromCharCode(((x + shift) % 26) + base);
+            result += encryptedChar;
+          } else {
+            // Non-alphabet characters remain unchanged
+            result += char;
+          }
+        }
+
+        return result;
+      }
+
+      // Function to handle encryption when the button is clicked
+      function encryptText() {
+        const plaintext = document.getElementById("plaintext").value;
+        const shift = parseInt(document.getElementById("shift").value);
+
+        // Validate inputs
+        if (!plaintext || isNaN(shift) || shift < 0 || shift > 25) {
+          alert("Please enter valid plaintext and shift key (0-25).");
+          return;
+        }
+
+        // Encrypt the text
+        const encrypted = caesarCipher(plaintext, shift);
+        document.getElementById("encryptedText").textContent = encrypted;
+        document.getElementById("decryptedText").textContent = ""; // Clear previous decryption result
+      }
+
+      // Function to handle decryption when the button is clicked
+      function decryptText() {
+        const ciphertext = document.getElementById("encryptedText").textContent;
+        const shift = parseInt(document.getElementById("shift").value);
+
+        // Validate inputs
+        if (!ciphertext || isNaN(shift) || shift < 0 || shift > 25) {
+          alert("Please enter valid ciphertext and shift key (0-25).");
+          return;
+        }
+
+        // Decrypt the text (shift in reverse direction)
+        const decrypted = caesarCipher(ciphertext, 26 - shift);
+        document.getElementById("decryptedText").textContent = decrypted;
+      }
+    </script>
+  </body>
+</html>
