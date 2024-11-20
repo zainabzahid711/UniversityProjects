@@ -14,6 +14,12 @@
       id="plaintext"
       placeholder="Enter your text here"
     /><br /><br />
+    <label for="ciphertext">Enter Ciphertext:</label>
+    <input
+      type="text"
+      id="ciphertext"
+      placeholder="Enter encrypted text here"
+    /><br /><br />
 
     <label for="shift">Enter Shift Key (0-25):</label>
     <input
@@ -30,6 +36,7 @@
     <h3>Result</h3>
     <p><strong>Encrypted Text:</strong> <span id="encryptedText"></span></p>
     <p><strong>Decrypted Text:</strong> <span id="decryptedText"></span></p>
+    <p id="errorMessage" style="color: red"></p>
 
     <script>
       // Function to encrypt text using Caesar Cipher
@@ -55,32 +62,41 @@
       }
 
       // Function to handle encryption when the button is clicked
+      function showError(message) {
+        document.getElementById("errorMessage").textContent = message;
+      }
+
       function encryptText() {
         const plaintext = document.getElementById("plaintext").value;
         const shift = parseInt(document.getElementById("shift").value);
 
-        // Validate inputs
         if (!plaintext || isNaN(shift) || shift < 0 || shift > 25) {
-          alert("Please enter valid plaintext and shift key (0-25).");
+          showError("Please enter valid plaintext and shift key (0-25).");
           return;
         }
 
-        // Encrypt the text
+        document.getElementById("errorMessage").textContent = ""; // Clear error
         const encrypted = caesarCipher(plaintext, shift);
         document.getElementById("encryptedText").textContent = encrypted;
-        document.getElementById("decryptedText").textContent = ""; // Clear previous decryption result
+        document.getElementById("decryptedText").textContent = "";
       }
 
       // Function to handle decryption when the button is clicked
       function decryptText() {
-        const ciphertext = document.getElementById("encryptedText").textContent;
+        // Use the input field value first, fallback to the result of encryption
+        const ciphertext =
+          document.getElementById("ciphertext").value ||
+          document.getElementById("encryptedText").textContent;
+
         const shift = parseInt(document.getElementById("shift").value);
 
         // Validate inputs
         if (!ciphertext || isNaN(shift) || shift < 0 || shift > 25) {
-          alert("Please enter valid ciphertext and shift key (0-25).");
+          showError("Please enter valid ciphertext and shift key (0-25).");
           return;
         }
+
+        document.getElementById("errorMessage").textContent = ""; // Clear error
 
         // Decrypt the text (shift in reverse direction)
         const decrypted = caesarCipher(ciphertext, 26 - shift);
